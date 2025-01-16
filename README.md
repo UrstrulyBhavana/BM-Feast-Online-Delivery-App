@@ -1,7 +1,6 @@
 # BM-Feast-Online-Delivery-App
 
     AppDownload Component:-
-    
 The component imports two images: one for the Play Store and one for the App Store.It displays a message encouraging users to download the app.Below the message, it shows the two images as buttons that users can click to go to the Play Store or App Store.
 
     ExploreMenu Component :-
