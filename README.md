@@ -27,16 +27,16 @@ Welcome to **BM-Feast**, an interactive food ordering platform where users can e
 
 #### Technologies Used:
 
-- **React.js**
-- **React Router DOM**
-- **Context API** for state management
-- **CSS Modules** for scoped styles
+![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=flat-square)  
+![React Router](https://img.shields.io/badge/-React_Router-CA4245?logo=react-router&logoColor=white&style=flat-square)  
+![Context API](https://img.shields.io/badge/-Context_API-764ABC?logo=redux&logoColor=white&style=flat-square)  
+![CSS Modules](https://img.shields.io/badge/-CSS_Modules-1572B6?logo=css3&logoColor=white&style=flat-square)  
 
 #### Tools:
 
-- **Version Control**: GitHub
-- **Package Management**: npm
-- **React Developer Tools**
+![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=flat-square)  
+![npm](https://img.shields.io/badge/-npm-CB3837?logo=npm&logoColor=white&style=flat-square)  
+![React Developer Tools](https://img.shields.io/badge/-React_Developer_Tools-61DAFB?logo=react&logoColor=white&style=flat-square)
 
 ---
 
@@ -167,6 +167,7 @@ $ npm run build
 #### Demo :-
 
 https://github.com/user-attachments/assets/bd12df74-b1e6-4610-bbee-4845f93c775d
+
 
 ---
 
