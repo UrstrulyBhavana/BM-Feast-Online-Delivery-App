@@ -12,7 +12,7 @@ https://github.com/user-attachments/assets/bd12df74-b1e6-4610-bbee-4845f93c775d
 
 ## 🧾 Overview
 
-BM Feast is a modern and interactive food ordering platform built using React, offering a smooth and intuitive user experience with mobile responsiveness, search filtering, dynamic cart functionality, and a clean checkout system. It’s designed with modular components for reusability and scalability.
+### BM Feast is a modern and interactive food ordering platform built using React, offering a smooth and intuitive user experience with mobile responsiveness, search filtering, dynamic cart functionality, and a clean checkout system. It’s designed with modular components for reusability and scalability.
 ---
 
 ## ✨ Features
