@@ -173,6 +173,7 @@ $ npm run build
 
 🙋‍♀️ Author
 Linga Bhavana – Frontend Developer
+
 GitHub | urstrulybhavana1432@gmail.com
 
 ---
