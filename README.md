@@ -1,15 +1,22 @@
 
-# BM-Feast: Food Ordering Application
+# 🍽️ BM-Feast – React Food Ordering Platform
 
 ---
 
-## Overview
+## 📽️ Demo
+
+> Explore the key features of the **BM-Feast App** in this walkthrough video:
+
+https://github.com/user-attachments/assets/bd12df74-b1e6-4610-bbee-4845f93c775d
+
+
+## 🧾 Overview
 
 Welcome to **BM-Feast**, an interactive food ordering platform where users can explore, select, and order their favorite dishes with ease. This app provides a seamless user experience, complete with cart functionality, responsive design, and engaging UI components.
 
 ---
 
-### Features :sparkles:
+## ✨ Features
 
 - **Dynamic Menu Exploration**: Browse through an extensive menu, categorized for easy navigation.
 - **Search Functionality**: Search for dishes by name with live filtering.
@@ -23,16 +30,16 @@ Welcome to **BM-Feast**, an interactive food ordering platform where users can e
 
 ---
 
-### Built With :hammer_and_wrench:
+## 🛠️ Built With
 
-#### Technologies Used:
+### ⚙️ Technologies Used
 
 ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white&style=flat-square)  
 ![React Router](https://img.shields.io/badge/-React_Router-CA4245?logo=react-router&logoColor=white&style=flat-square)  
 ![Context API](https://img.shields.io/badge/-Context_API-764ABC?logo=redux&logoColor=white&style=flat-square)  
 ![CSS Modules](https://img.shields.io/badge/-CSS_Modules-1572B6?logo=css3&logoColor=white&style=flat-square)  
 
-#### Tools:
+### 🧰 Tools Used
 
 ![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github&logoColor=white&style=flat-square)  
 ![npm](https://img.shields.io/badge/-npm-CB3837?logo=npm&logoColor=white&style=flat-square)  
@@ -40,7 +47,7 @@ Welcome to **BM-Feast**, an interactive food ordering platform where users can e
 
 ---
 
-### Application Structure :file_folder:
+## 📁 Folder Structure
 
 ```plaintext
 BM-Feast
@@ -94,7 +101,7 @@ BM-Feast
 
 ---
 
-### Installation :computer:
+💻 Installation
 
 1. **Clone the repository:**
 
@@ -123,7 +130,7 @@ $ npm run build
 
 ---
 
-### Functionalities
+⚙️ Functionalities
 
 ```plaintext
 1. **Dynamic Menu Exploration**:
@@ -156,7 +163,7 @@ $ npm run build
 
 ---
 
-### Project Demonstration :memo:
+🔍 Project Demonstration
 
 #### How it Works:
 1. Users start at the homepage, featuring a dynamic header and menu exploration options.
@@ -164,33 +171,29 @@ $ npm run build
 3. Add items to the cart and view real-time updates.
 4. Proceed to checkout to place an order with detailed user information.
 
-#### Demo :-
-
-https://github.com/user-attachments/assets/bd12df74-b1e6-4610-bbee-4845f93c775d
-
-
 ---
 
-### API References :link:
+🔗 API Reference
 
 - **Mocked API**: All data used in this application is mocked for demonstration purposes.
 
 ---
 
-### Contributors :busts_in_silhouette:
+👩‍💻 Contributor
+
 - **Linga Bhavana**: Developer and maintainer.
 
 ---
 
-### Contact :email:
+📬 Contact
 
 For questions or suggestions, feel free to contact me:
-- **Email**: urstrulybhavana1432@gmail.com
-- **GitHub**: [UrstrulyBhavana](https://github.com/UrstrulyBhavana)
+- **📧Email**: urstrulybhavana1432@gmail.com
+- **🐙GitHub**: [UrstrulyBhavana](https://github.com/UrstrulyBhavana)
 
 ---
 
-### License :page_facing_up:
+📝
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 ```
