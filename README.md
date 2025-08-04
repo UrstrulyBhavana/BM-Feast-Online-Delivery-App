@@ -139,7 +139,6 @@ $ npm start
 ```bash
 $ npm run build
 ```
-
 ---
 
 🧩 Functionalities Recap
