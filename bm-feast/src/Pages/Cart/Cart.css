@@ -91,3 +91,17 @@
         justify-content: start;
     }
 }
+
+.cart-items-title p,
+.cart-items-item p {
+  padding: 0 6px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.cart-items {
+  overflow-x: auto;
+}
+.cart-items-title, .cart-items-item {
+  min-width: 550px;
+}

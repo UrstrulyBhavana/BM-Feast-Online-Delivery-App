@@ -3,7 +3,6 @@ import './FoodItem.css'
 import { assets } from '../../assets/assets'
 import { StoreContext } from '../../context/StoreContext'
 import add_icon_white from '../../assets/add_icon_white.png'
-// import play_store from '../../assets/play_store.png'
 
 const FoodItem = ({ id, name, price, description, image }) => {
         

@@ -178,28 +178,28 @@ export const food_list = [
         category: "Rolls"
     }, {
         _id: "9",
-        name: "Ripple Ice Cream",
+        name: "Ripple Scoop",
         image: food_9,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Deserts"
     }, {
         _id: "10",
-        name: "Fruit Ice Cream",
+        name: "Fruity Swirl",
         image: food_10,
         price: 22,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Deserts"
     }, {
         _id: "11",
-        name: "Jar Ice Cream",
+        name: "Jar Delight",
         image: food_11,
         price: 10,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Deserts"
     }, {
         _id: "12",
-        name: "Vanilla Ice Cream",
+        name: "Vanilla Treat",
         image: food_12,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
@@ -236,42 +236,42 @@ export const food_list = [
         category: "Sandwich"
     }, {
         _id: "17",
-        name: "Cup Cake",
+        name: "Choco Cake",
         image: food_17,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake"
     }, {
         _id: "18",
-        name: "Vegan Cake",
+        name: "Plant Cake",
         image: food_18,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake"
     }, {
         _id: "19",
-        name: "Butterscotch Cake",
+        name: "Butter Cake",
         image: food_19,
         price: 20,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake"
     }, {
         _id: "20",
-        name: "Sliced Cake",
+        name: "Slice of Joy",
         image: food_20,
         price: 15,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake"
     }, {
         _id: "21",
-        name: "Garlic Mushroom ",
+        name: "Garlic Shrooms",
         image: food_21,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Pure Veg"
     }, {
         _id: "22",
-        name: "Fried Cauliflower",
+        name: "Fried Florets",
         image: food_22,
         price: 22,
         description: "Food provides essential nutrients for overall health and well-being",
@@ -285,7 +285,7 @@ export const food_list = [
         category: "Pure Veg"
     }, {
         _id: "24",
-        name: "Rice Zucchini",
+        name: "Zucchini Rice",
         image: food_24,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
@@ -322,28 +322,28 @@ export const food_list = [
         category: "Pasta"
     }, {
         _id: "29",
-        name: "Buttter Noodles",
+        name: "Creamy Butter Noodles",
         image: food_29,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Noodles"
     }, {
         _id: "30",
-        name: "Veg Noodles",
+        name: "Classic Veg Noodles",
         image: food_30,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Noodles"
     }, {
         _id: "31",
-        name: "Somen Noodles",
+        name: "Spicy Somen Noodles",
         image: food_31,
         price: 20,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Noodles"
     }, {
         _id: "32",
-        name: "Cooked Noodles",
+        name: "Steamed Veg Noodles",
         image: food_32,
         price: 15,
         description: "Food provides essential nutrients for overall health and well-being",

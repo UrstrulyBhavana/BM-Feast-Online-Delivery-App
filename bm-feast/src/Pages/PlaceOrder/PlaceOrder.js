@@ -1,11 +1,32 @@
 import React, { useContext } from 'react'
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext'
-
+import Swal from 'sweetalert2';
 
 const PlaceOrder = () => {
- 
-  const {getTotalCartAmount} = useContext(StoreContext)
+
+  const { getTotalCartAmount } = useContext(StoreContext)
+
+  const handleProceedToPayment = () => {
+  const total = getTotalCartAmount();
+  if (total === 0) {
+    Swal.fire({
+      title: 'Cart is Empty!',
+      text: 'Please add items to your cart before proceeding.',
+      icon: 'warning',
+      confirmButtonText: 'Go Back',
+      confirmButtonColor: '#ff6347',
+    });
+  } else {
+    Swal.fire({
+      title: 'Order Placed Successfully!',
+      text: 'Your delicious food will arrive shortly.',
+      icon: 'success',
+      confirmButtonText: 'Okay',
+      confirmButtonColor: '#ff6347',
+    });
+  }
+};
 
   return (
     <form className='place-order'>
@@ -32,22 +53,25 @@ const PlaceOrder = () => {
         <div className='cart-total'>
           <h2>Cart Totals</h2>
           <div>
-          <div className='cart-total-details'>
+            <div className='cart-total-details'>
               <p>Subtotal</p>
               <p>${getTotalCartAmount()}</p>
             </div>
             <hr />
             <div className='cart-total-details'>
               <p>Delivery Fee</p>
-              <p>${getTotalCartAmount()===0 ? 0 : 2}</p>
+              <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
             </div>
             <hr />
             <div className='cart-total-details'>
               <b>Total</b>
-              <b>${ getTotalCartAmount()===0 ? 0 : getTotalCartAmount()+2}</b>
+              <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>
           </div>
-          <button>PROCEED TO PAYMENT</button>
+          <button type="button" onClick={handleProceedToPayment}>
+            PROCEED TO PAYMENT
+          </button>
+
         </div>
 
       </div>
