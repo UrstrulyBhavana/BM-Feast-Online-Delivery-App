@@ -99,7 +99,8 @@ BM-Feast-Online-Delivery-App/
 ```
 ---
 
-📝 Project Demonstration
+## 📝 Project Demonstration
+
 ✔ Landing page with hero, highlights, and category chips
 ✔ Search bar filters dishes instantly
 ✔ Add/remove items; quantities update live in the cart
@@ -109,6 +110,7 @@ BM-Feast-Online-Delivery-App/
 ✔ Login modal with ESC/overlay close + background scroll-lock
 ✔ Active nav states across routes (Home, Menu, Mobile-App, Contact)
 ✔ Fully responsive; cart table scrolls horizontally on small screens
+
 ---
 
 💻 Installation
