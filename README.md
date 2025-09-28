@@ -102,13 +102,21 @@ BM-Feast-Online-Delivery-App/
 ## 📝 Project Demonstration
 
 ✔ Landing page with hero, highlights, and category chips
+
 ✔ Search bar filters dishes instantly
+
 ✔ Add/remove items; quantities update live in the cart
+
 ✔ Subtotal, delivery, total computed with proper currency formatting
+
 ✔ Checkout button remains disabled until the cart has items
+
 ✔ Place Order page collects delivery details
+
 ✔ Login modal with ESC/overlay close + background scroll-lock
+
 ✔ Active nav states across routes (Home, Menu, Mobile-App, Contact)
+
 ✔ Fully responsive; cart table scrolls horizontally on small screens
 
 ---
