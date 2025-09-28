@@ -1,84 +1,62 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
 import { assets } from '../../assets/assets';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
 
-const Navbar = ({ setShowLogin }) => {
-    const [menu, setMenu] = useState("menu");
-    const { getTotalCartAmount, isLoggedIn, setIsLoggedIn } = useContext(StoreContext);
+export default function Navbar({ setShowLogin }) {
+  const { getTotalCartAmount, isLoggedIn, setIsLoggedIn } = useContext(StoreContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    const handleLogout = () => {
-        setIsLoggedIn(false);
-    };
+  const getHeaderOffset = () =>
+    (document.querySelector('.navbar')?.offsetHeight || 0) + 8;
 
-    return (
-        <div className='navbar' role="navigation">
-            <Link to='/'><img src={assets.logo1} alt="logo1" className="logo" /></Link>
-            <ul className="navbar-menu">
-                <Link to='/' onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>Home</Link>
-                <a href='#explore-menu' onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Menu</a>
-                <a href='#app-download' onClick={() => setMenu("mobile-app")} className={menu === "mobile-app" ? "active" : ""}>Mobile-App</a>
-                <a href='#footer' onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : ""}>Contact Us</a>
-            </ul>
-            <div className="navbar-right">
-                <div className="navbar-search-icon">
-                    <Link to='/cart'><img src={assets.basket_icon} alt="cart" /></Link>
-                    <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
-                </div>
+  const scrollToId = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.pageYOffset - getHeaderOffset();
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+  };
 
-                   {isLoggedIn ? (
-                    <button onClick={handleLogout}>Logout</button>
-                ) : (
-                    <button onClick={() => setShowLogin(true)}>Sign In</button>
-                )}
-     
-            </div>
+  const jumpTo = (id) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => scrollToId(id), 100); // give Home a tick to mount
+    } else {
+      scrollToId(id);
+    }
+  };
+
+  return (
+    <div className="navbar" role="navigation">
+      <Link to="/" aria-label="Home">
+        <img src={assets.logo1} alt="MB logo" className="logo" />
+      </Link>
+
+      <ul className="navbar-menu">
+        <li>
+          <NavLink to="/" end className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+            Home
+          </NavLink>
+        </li>
+        <li><button type="button" className="linklike" onClick={() => jumpTo('explore-menu')}>Menu</button></li>
+        <li><button type="button" className="linklike" onClick={() => jumpTo('app-download')}>Mobile-App</button></li>
+        <li><button type="button" className="linklike" onClick={() => jumpTo('footer')}>Contact Us</button></li>
+      </ul>
+
+      <div className="navbar-right">
+        <div className="navbar-search-icon">
+          <Link to="/cart"><img src={assets.basket_icon} alt="cart" /></Link>
+          <div className={getTotalCartAmount() === 0 ? '' : 'dot'}></div>
         </div>
-    );
-};
 
-export default Navbar;
-
-
-// import React, { useContext, useState } from 'react';
-// import './Navbar.css';
-// import { assets } from '../../assets/assets';
-// import { Link } from 'react-router-dom';
-// import { StoreContext } from '../../context/StoreContext';
-
-// const Navbar = ({ setShowLogin }) => {
-//     const [menu, setMenu] = useState("menu");
-//     const { getTotalCartAmount, isLoggedIn, userName, handleLogout } = useContext(StoreContext);
-
-//     return (
-//         <div className='navbar'>
-//             <Link to='/'><img src={assets.logo1} alt="logo" className="logo" /></Link>
-
-//             <ul className="navbar-menu">
-//                 <Link to='/' onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>Home</Link>
-//                 <a href='#explore-menu' onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Menu</a>
-//                 <a href='#app-download' onClick={() => setMenu("mobile-app")} className={menu === "mobile-app" ? "active" : ""}>Mobile-App</a>
-//                 <a href='#footer' onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : ""}>Contact Us</a>
-//             </ul>
-
-//             <div className="navbar-right">
-//                 <div className="navbar-search-icon">
-//                     <Link to='/cart'><img src={assets.basket_icon} alt="cart" /></Link>
-//                     <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
-//                 </div>
-
-//                 {isLoggedIn ? (
-//                     <div className="navbar-user">
-//                         <span className="user-name">👤 {userName}</span>
-//                         <button onClick={handleLogout}>Sign Out</button>
-//                     </div>
-//                 ) : (
-//                     <button onClick={() => setShowLogin(true)}>Sign In</button>
-//                 )}
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Navbar;
+        {isLoggedIn ? (
+          <button onClick={() => setIsLoggedIn(false)} className="logout-btn">Logout</button>
+        ) : (
+          <button onClick={() => setShowLogin(true)} className="signin-btn">Sign In</button>
+        )}
+      </div>
+    </div>
+  );
+}

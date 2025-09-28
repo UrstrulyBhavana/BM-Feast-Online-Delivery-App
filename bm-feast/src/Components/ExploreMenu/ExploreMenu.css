@@ -1,7 +1,9 @@
+
 .explore-menu {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    scroll-margin-top: 90px; 
 }
 
 .explore-menu h1 {
@@ -70,3 +72,10 @@
         font-size: 17px;
     }
 }
+
+
+/* the round category images should keep square space while loading */
+.explore-menu-list-item img { aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+
+
+

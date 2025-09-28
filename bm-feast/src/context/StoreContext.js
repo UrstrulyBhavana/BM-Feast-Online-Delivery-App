@@ -4,127 +4,60 @@ import { food_list } from "../assets/assets";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-    const [cartItems, setCartItems] = useState({});
-    const [searchTerm, setSearchTerm] = useState("");
+  const [cartItems, setCartItems] = useState({});
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const addToCart = (itemId) => {
+    setCartItems((prev) => ({ ...prev, [itemId]: (prev[itemId] || 0) + 1 }));
+  };
 
-    const addToCart = (itemId) => {
-        if (!cartItems[itemId]) {
-            setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
-        } else {
-            setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-        }
-    };
+  const removeFromCart = (itemId) => {
+    setCartItems((prev) => {
+      const nextQty = (prev[itemId] || 0) - 1;
+      if (nextQty <= 0) {
+        const { [itemId]: _omit, ...rest } = prev; 
+        return rest;
+      }
+      return { ...prev, [itemId]: nextQty };
+    });
+  };
 
-    const removeFromCart = (itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
-    };
+  const getTotalCartAmount = () => {
+    let total = 0;
+    for (const id in cartItems) {
+      const qty = cartItems[id];
+      if (qty > 0) {
+        const item = food_list.find((p) => p._id === id);
+        if (item) total += item.price * qty;
+      }
+    }
+    return total;
+  };
 
-    const getTotalCartAmount = () => {
-        let totalAmount = 0;
-        for (const item in cartItems) {
-            if (cartItems[item] > 0) {
-                let itemInfo = food_list.find((product) => product._id === item);
-                totalAmount += itemInfo.price * cartItems[item];
-            }
-        }
-        return totalAmount;
-    };
+  const clearCart = () => setCartItems({});
 
-    const contextValue = {
-        food_list,
-        cartItems,
-        setCartItems,
-        addToCart,
-        removeFromCart,
-        getTotalCartAmount,
-        searchTerm,
-        setSearchTerm,
-        isLoggedIn,
-        setIsLoggedIn,
-    };
+  const contextValue = {
+    food_list,
+    cartItems,
+    setCartItems,
+    addToCart,
+    removeFromCart,
+    clearCart,
+    getTotalCartAmount,
+    searchTerm,
+    setSearchTerm,
+    isLoggedIn,
+    setIsLoggedIn,
+  };
 
-    return (
-        <StoreContext.Provider value={contextValue}>
-            {props.children}
-        </StoreContext.Provider>
-    );
+  return (
+    <StoreContext.Provider value={contextValue}>
+      {props.children}
+    </StoreContext.Provider>
+  );
 };
 
 export default StoreContextProvider;
 
-// import { createContext, useState } from "react";
-// import { food_list } from "../assets/assets";
-
-// export const StoreContext = createContext(null);
-
-// const StoreContextProvider = (props) => {
-//     const [cartItems, setCartItems] = useState({});
-//     const [searchTerm, setSearchTerm] = useState("");
-
-//     const [isLoggedIn, setIsLoggedIn] = useState(false);
-//     const [userName, setUserName] = useState("");
-
-//     const addToCart = (itemId) => {
-//         if (!cartItems[itemId]) {
-//             setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
-//         } else {
-//             setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-//         }
-//     };
-
-//     const removeFromCart = (itemId) => {
-//         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
-//     };
-
-//     const getTotalCartAmount = () => {
-//         let totalAmount = 0;
-//         for (const item in cartItems) {
-//             if (cartItems[item] > 0) {
-//                 let itemInfo = food_list.find((product) => product._id === item);
-//                 totalAmount += itemInfo.price * cartItems[item];
-//             }
-//         }
-//         return totalAmount;
-//     };
-
-//     const contextValue = {
-//         food_list,
-//         cartItems,
-//         setCartItems,
-//         addToCart,
-//         removeFromCart,
-//         getTotalCartAmount,
-//         searchTerm,
-//         setSearchTerm,
-//         isLoggedIn,
-//         setIsLoggedIn,
-//     };
-
-//     const handleLogin = (name) => {
-//         setIsLoggedIn(true);
-//         setUserName(name);
-//     };
-
-//     const handleLogout = () => {
-//         setIsLoggedIn(false);
-//         setUserName("");
-//     };
-
-
-//     return (
-//         <StoreContext.Provider value={{
-//             ...contextValue,
-//             isLoggedIn,
-//             userName,
-//             handleLogin,
-//             handleLogout,
-//         }}>
-//             {props.children}
-//         </StoreContext.Provider>
-//     );
-// };
-
-// export default StoreContextProvider;
 

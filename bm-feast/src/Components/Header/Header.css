@@ -1,4 +1,3 @@
-
 .header{
     height: 34vw;
     margin: 5px auto;
@@ -6,6 +5,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
+    background-position: right center;
 }
 
 .header-contents{
@@ -69,4 +69,11 @@
     .header-contents h2{
      font-size: 16px;
     }
+    .header{
+      border-radius: 10px;
+      /* box-shadow: #747474; */
+    }
 }
+
+ 
+

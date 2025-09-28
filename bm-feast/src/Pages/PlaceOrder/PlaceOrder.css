@@ -59,3 +59,28 @@
   }
 }
 
+.place-order-left input {
+  background: #fff;
+  color: #111;
+  height: 42px;
+}
+
+.place-order-left input::placeholder {
+  color: #8a8a8a;
+}
+
+.place-order .cart-total button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.place-order .place-order-left input::-webkit-input-placeholder { color:#6b7280; opacity:1; }
+.place-order .place-order-left input::-moz-placeholder { color:#6b7280; opacity:1; }
+.place-order .place-order-left input:-ms-input-placeholder { color:#6b7280; }
+.place-order .place-order-left input::placeholder { color:#6b7280; opacity:1; }
+
+.place-order .place-order-left input:focus {
+  border-color:#ff7f0e;
+  box-shadow:0 0 0 3px rgba(255,126,14,.15);
+  outline:none;
+}

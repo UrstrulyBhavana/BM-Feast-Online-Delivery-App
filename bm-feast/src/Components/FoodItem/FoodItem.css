@@ -61,3 +61,7 @@
 .food-item-counter img{
     width: 30px;
 }
+
+/* reserve image space to stop reflow during load */
+.food-item-img-container { aspect-ratio: 4 / 3; overflow: hidden; }
+.food-item-image { width: 100%; height: 100%; object-fit: cover; display: block; }

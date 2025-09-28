@@ -1,11 +1,12 @@
 .login-popup{
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background-color: #00000090;
-    display: grid;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background-color: #00000090;
+  display: grid;
+  overscroll-behavior: contain;
 }
+
 .login-popup-container{
     place-self: center;
     width: max(23vw,330px);
@@ -26,10 +27,42 @@
     color: black;
 }
 
-.login-popup-title img{
-    width: 16px;
-    cursor: pointer;
+.login-close{
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .08s ease, background-color .12s ease, box-shadow .12s ease;
+  -webkit-tap-highlight-color: transparent;
 }
+
+.login-close:hover{
+  background: #f6f6f6;
+  transform: translateY(-1px);
+}
+
+.login-close:active{
+  background: #ededed;
+  transform: translateY(0) scale(.96);
+}
+
+.login-close:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255,126,14,.35);
+  background: #fff7f3;
+}
+
+.login-close img{
+  width: 16px;
+  height: 16px;
+  pointer-events: none; 
+}
+
 .login-popup-inputs{
     display: flex;
     flex-direction: column;

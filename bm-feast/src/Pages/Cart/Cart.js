@@ -5,9 +5,15 @@ import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
 
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount} = useContext(StoreContext)
- 
-  const navigate = useNavigate()  
+  const { cartItems, food_list, removeFromCart, getTotalCartAmount } = useContext(StoreContext)
+
+  const navigate = useNavigate()
+
+  const subtotal = getTotalCartAmount();
+  const delivery = subtotal === 0 ? 0 : 2;
+  const total = subtotal === 0 ? 0 : subtotal + delivery;
+
+  const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format;
 
   return (
     <div className='cart'>
@@ -22,7 +28,7 @@ const Cart = () => {
         </div>
         <br />
         <hr />
-        {food_list.map((item, index) => {
+        {food_list.map((item) => {
           if (cartItems[item._id] > 0) {
             return (
               <div key={item._id}>
@@ -31,8 +37,16 @@ const Cart = () => {
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
-                  <p>${item.price * cartItems[item._id]}</p>
-                  <p onClick={() => removeFromCart(item._id)} className='cross'>x</p>
+                  <p>${item.price * cartItems[item._id]}</p>                 
+                  <button
+                    type="button"
+                    className="cross"
+                    aria-label={`Remove ${item.name}`}
+                    title={`Remove ${item.name}`}     
+                    onClick={() => removeFromCart(item._id)}
+                  >
+                    ×
+                  </button>
                 </div>
                 <hr />
               </div>
@@ -48,27 +62,35 @@ const Cart = () => {
           <div>
             <div className='cart-total-details'>
               <p>Subtotal</p>
-              <p>${getTotalCartAmount()}</p>
+              <p>{currency(subtotal)}</p>
             </div>
             <hr />
             <div className='cart-total-details'>
               <p>Delivery Fee</p>
-              <p>${getTotalCartAmount()===0 ? 0 : 2}</p>
+              <p>{currency(delivery)}</p>
             </div>
             <hr />
             <div className='cart-total-details'>
               <b>Total</b>
-              <b>${ getTotalCartAmount()===0 ? 0 : getTotalCartAmount()+2}</b>
+              <b>{currency(total)}</b>
             </div>
           </div>
-          <button onClick={()=>navigate('/order')}>PROCEED TO CHECKOUT</button>
+          <button
+            onClick={() => navigate('/order')}
+            disabled={subtotal === 0}
+            aria-disabled={subtotal === 0}
+            title={subtotal === 0 ? 'Add items to your cart to checkout' : 'Proceed to checkout'}
+          >
+            PROCEED TO CHECKOUT
+          </button>
+
         </div>
         <div className='cart-promocode'>
           <div>
             <p>If you have a promo code, Enter it here!...</p>
             <div className='cart-promocode-input'>
-               <input type='text' placeholder='promo code'/>
-               <button>Submit</button> 
+              <input type='text' placeholder='promo code' />
+              <button>Submit</button>
             </div>
           </div>
         </div>
