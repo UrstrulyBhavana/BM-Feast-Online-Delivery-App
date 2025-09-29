@@ -6,6 +6,8 @@
 ---
 
 ## 📽️ Watch Full Demo on YouTube
+> Click the image below to watch the video demo:
+
 [![BM Feast Demo](https://img.youtube.com/vi/kZMpLhZtglM/maxresdefault.jpg)](https://youtu.be/kZMpLhZtglM)
 
 ---
